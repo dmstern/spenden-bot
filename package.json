@@ -1,0 +1,17 @@
+{
+  "name": "spenden-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Daniel Morgenstern <morgenstern.daniel@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^15.1.1",
+    "request": "^2.88.0",
+    "twit": "^2.2.11",
+    "yaml": "^1.6.0"
+  }
+}

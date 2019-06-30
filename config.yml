@@ -1,0 +1,2 @@
+fetchEverySeconds: 5
+tweetIfGrowthBiggerThan: 1000
