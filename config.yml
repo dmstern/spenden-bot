@@ -1,2 +1,25 @@
-fetchEverySeconds: 5
-tweetIfGrowthBiggerThan: 1000
+leetchiUrl: https://www.leetchi.com/c/leben-retten-ist-kein-verbrechen-lasst-uns-die-seenotretter-retten
+fetchEverySeconds: 60
+tweetIfGrowthBiggerThan: 500
+bigTweetIfGrowthBiggerThan: 10000
+port: 3000
+followNewUsersEverySeconds: 60
+tweetAfterHours: 4
+maxSearchResults: 1
+keepAwakeIntervalInMinutes: 5
+herokuUrl: http://spenden-bot.herokuapp.com
+searchHashtags:
+  - FreeCarolaRackete
+  - CarolaRackete
+  - RechtAufFlucht
+  - SeaWatch3
+  - SeaWatch
+  - Seebrücke
+  - Seenotrettung
+  - fckafd
+  - mittelmeer
+postHashtags:
+  - CarolaRackete
+  - SeaWatch3
+  - Seenotrettung
+  - RechtAufFlucht

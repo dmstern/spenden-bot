@@ -4,14 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "npm run prettier && eslint --fix src",
+    "prettier": "prettier --write src/**/*.js"
   },
   "author": "Daniel Morgenstern <morgenstern.daniel@gmail.com",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmstern/spenden-bot"
+  },
+  "homepage": "https://twitter.com/spenden_bot",
   "dependencies": {
     "jsdom": "^15.1.1",
     "request": "^2.88.0",
     "twit": "^2.2.11",
     "yaml": "^1.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "prettier": "^1.18.2"
   }
 }

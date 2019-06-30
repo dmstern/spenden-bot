@@ -1,14 +1,13 @@
 const jsdom = require("jsdom");
-const request = require('request');
+const request = require("request");
+const config = require("./Config");
 
 const { JSDOM } = jsdom;
-const leetchiUrl = 'https://www.leetchi.com/c/leben-retten-ist-kein-verbrechen-lasst-uns-die-seenotretter-retten';
 
 function fetchWebsiteContent(url, callback) {
-  request(url, function (error, response, body) {
+  request(url, function(error, response, body) {
     if (error) {
-      console.error(error);
-      throw error;
+      return console.error(error);
     }
 
     if (response.statusCode !== 200) {
@@ -21,17 +20,19 @@ function fetchWebsiteContent(url, callback) {
 
 function parseDonationSum(markup, callback) {
   const dom = new JSDOM(markup);
-  const sumSelector = '.o-article-status__heading.c-header__heading';
-  const donationSumText = dom.window.document.querySelector(sumSelector).textContent;
-  const donationSumNormalized = donationSumText.replace('.', '').replace(',', '.');
-  const donationSum = parseFloat(donationSumNormalized);
-  console.log(donationSum);
-  callback(donationSum);
+  const sumSelector = ".o-article-status__heading.c-header__heading";
+  const donationSumText = dom.window.document.querySelector(sumSelector)
+    .textContent;
+  const donationSumNormalized = donationSumText
+    .replace(".", "")
+    .replace(",", ".");
+  const donationSum = parseInt(donationSumNormalized);
+  console.log("💰 donationSum", donationSum);
+  callback(donationSum, donationSumText);
 }
 
 module.exports = {
-  getDonationSum: callback => {
-    fetchWebsiteContent(leetchiUrl, callback)
-  },
-  leetchiUrl
+  getDonationSum: (callback) => {
+    fetchWebsiteContent(config.leetchiUrl, callback);
+  }
 };
