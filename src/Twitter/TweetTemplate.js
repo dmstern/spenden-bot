@@ -11,6 +11,9 @@ function defaultTemplate(sum) {
   let sumString = sum.replace(/\r?\n|\r/g, "");
 
   return `${convertEmojis(sumString, true)} Spenden für Menschlichkeit gesammelt.
+
+http://fckaf.de/yIL
+
 ${generateHashTags()}`;
 }
 
@@ -21,7 +24,7 @@ function millionTemplate(sum) {
 
 Schon ${convertEmojis(sumString, true)} Spenden für Menschlichkeit gesammelt!
 
-Weiter geht's: ${config.leetchiUrl}
+Weiter geht's: http://fckaf.de/yIL
 
 @janboehm @damitdasklaas
 ${generateHashTags()}`;
