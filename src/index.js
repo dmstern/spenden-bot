@@ -33,20 +33,14 @@ function main() {
       const hoursSinceLastTweet = milliSecondsSinceTweet / 1000 / 60 / 60;
 
       Donations.getDonationSum((sum, text) => {
-        const reachedOneMillion =
-          lastTweetedDonation < 1000000 && sum > 1000000;
-        const template = reachedOneMillion
-          ? Twitter.TweetTemplate.millionTemplate
-          : Twitter.TweetTemplate.defaultTemplate;
+        const template = Twitter.TweetTemplate.defaultTemplate;
         const reachedNextStep =
           sum - lastTweetedDonation > config.tweetIfGrowthBiggerThan;
         const isSumRound = sum % 1000 === 0 && lastTweetedDonation !== sum;
         const lastTweetIsOld = hoursSinceLastTweet > config.tweetAfterHours;
-        const shouldTweet =
-          reachedOneMillion || reachedNextStep || lastTweetIsOld || isSumRound;
+        const shouldTweet = reachedNextStep || lastTweetIsOld || isSumRound;
 
         console.log({
-          reachedOneMillion,
           reachedNextStep,
           lastTweetIsOld,
           isSumRound
