@@ -41,6 +41,8 @@ function main() {
         const shouldTweet = reachedNextStep || lastTweetIsOld || isSumRound;
 
         console.log({
+          lastTweetedDonation,
+          sum,
           reachedNextStep,
           lastTweetIsOld,
           isSumRound
