@@ -1,6 +1,7 @@
 const jsdom = require("jsdom");
 const request = require("request");
 const config = require("./Config");
+const normalizeSum = require("./normalizeSum");
 
 const { JSDOM } = jsdom;
 
@@ -23,9 +24,7 @@ function parseDonationSum(markup, callback) {
   const sumSelector = ".o-article-status__heading.c-header__heading";
   const donationSumText = dom.window.document.querySelector(sumSelector)
     .textContent;
-  const donationSumNormalized = donationSumText
-    .replace(new RegExp("\\.", "g"), "")
-    .replace(",", ".");
+  const donationSumNormalized = normalizeSum(donationSumText);
   const donationSum = parseInt(donationSumNormalized);
   console.log("💰 donationSum", donationSum);
   callback(donationSum, donationSumText);
