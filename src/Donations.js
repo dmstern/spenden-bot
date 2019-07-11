@@ -24,7 +24,7 @@ function parseDonationSum(markup, callback) {
   const donationSumText = dom.window.document.querySelector(sumSelector)
     .textContent;
   const donationSumNormalized = donationSumText
-    .replace(".", "")
+    .replace(new RegExp("\\.", "g"), "")
     .replace(",", ".");
   const donationSum = parseInt(donationSumNormalized);
   console.log("💰 donationSum", donationSum);
