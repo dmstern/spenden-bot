@@ -16,7 +16,7 @@
   },
   "homepage": "https://twitter.com/spenden_bot",
   "dependencies": {
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "request": "^2.88.0",
     "twit": "^2.2.11",
     "yaml": "^1.6.0"
